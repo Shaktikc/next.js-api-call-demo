@@ -44,7 +44,7 @@ const Posts = ({ posts }) => {
 };
 
 export default Posts;
-
+// by getStaticProps the page is available at build time ahead of a user’s request which helps in SEO
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
