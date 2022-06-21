@@ -39,9 +39,6 @@ export default Post;
 
 //getStaticPaths used for  pre-rendering pages that use dynamic routes
 export async function getStaticPaths() {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-  const posts = await res.json();
-
   return {
     paths: [
       { params: { id: "1" } },

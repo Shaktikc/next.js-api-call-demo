@@ -15,21 +15,3 @@ const Comments = () => {
 };
 
 export default Comments;
-// by getStaticProps the page is available at build time ahead of a user’s request which helps in SEO
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-
-  const { data: res } = await axios.get(
-    `https://api.theyetitech.com/api/about/`
-  );
-  console.log("res", res);
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      res,
-    },
-  };
-}
