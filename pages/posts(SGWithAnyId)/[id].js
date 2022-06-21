@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import React from "react";
 
 // here three page(i.e. id = 1 , id = 2 and id = 3)  is pre render  during project build,but if differnt id is enter in url
-// then 404 page is returned
+// then other id page are also SG(statically generated)/pre render, and if any other user enter the same id, then same page is delivired, but if new id is entered then
+// page is again SG.
 const Post = ({ post }) => {
   return (
     <Box>
@@ -48,7 +49,7 @@ export async function getStaticPaths() {
         // with i18n configured the locale for the path can be returned as well
       },
     ],
-    fallback: false,
+    fallback: "blocking",
     //The paths that have not been generated at build time will not result in a 404 page.
     //Instead, fallback: true This will be used to automatically render
     //the page with the required props.
