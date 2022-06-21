@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const Post = ({ post }) => {
-  const router = useRouter();
-  console.log("router", router);
+  // const router = useRouter();
+  // console.log("router", router);
   return (
     <Box>
       <Box
@@ -42,6 +42,7 @@ export async function getStaticPaths() {
   return {
     paths: [
       { params: { id: "1" } },
+      { params: { id: "3" } },
       {
         params: { id: "2" },
         // with i18n configured the locale for the path can be returned as well
