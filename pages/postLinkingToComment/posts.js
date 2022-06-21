@@ -1,9 +1,15 @@
 import React from "react";
 import { Box, Center, Flex, HStack, Text, VStack } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 const Posts = ({ posts }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("test");
+  };
   return (
-    <Box>
+    <Box onClick={handleClick}>
       {posts.slice(0, 4).map((post) => {
         return (
           <Box
@@ -15,6 +21,7 @@ const Posts = ({ posts }) => {
             boxShadow={"lg"}
             bg="green.500"
             padding={"1rem"}
+            cursor="pointer"
           >
             <Box>
               <Text fontWeight={"bold"}>ID</Text>
