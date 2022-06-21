@@ -48,7 +48,7 @@ export async function getStaticPaths() {
         // with i18n configured the locale for the path can be returned as well
       },
     ],
-    fallback: true,
+    fallback: false,
     //The paths that have not been generated at build time will not result in a 404 page.
     //Instead, fallback: true This will be used to automatically render
     //the page with the required props.
