@@ -5,11 +5,11 @@ import { useRouter } from "next/router";
 const Posts = ({ posts }) => {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push("test");
+  const handleClick = (id) => {
+    router.push(`${id}/comments`);
   };
   return (
-    <Box onClick={handleClick}>
+    <Box>
       {posts.slice(0, 4).map((post) => {
         return (
           <Box
@@ -22,6 +22,7 @@ const Posts = ({ posts }) => {
             bg="green.500"
             padding={"1rem"}
             cursor="pointer"
+            onClick={() => handleClick(post.id)}
           >
             <Box>
               <Text fontWeight={"bold"}>ID</Text>
