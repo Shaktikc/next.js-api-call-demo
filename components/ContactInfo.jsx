@@ -20,7 +20,7 @@ export const ContactInfo = ({ getContactData }) => {
       </Text>
       <Text lineHeight="2rem">
         {getContactData?.email1}
-        <Box>{getContactData?.email2 !== "null" && getContactData?.email2}</Box>
+        {getContactData?.email2 !== "null" && getContactData?.email2}
       </Text>
       <Text lineHeight="2rem">
         <Link to={getContactData?.facebook_link}>
