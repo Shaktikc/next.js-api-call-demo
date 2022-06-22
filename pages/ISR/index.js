@@ -16,7 +16,7 @@ export default IncrementalStaticRegeneration;
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/products/1");
+  const res = await fetch("http://localhost:4000/products/1");
   const product = await res.json();
 
   return {
