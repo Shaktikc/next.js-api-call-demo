@@ -1,42 +1,38 @@
 import React from "react";
 import { Box, Center, Flex, HStack, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Posts = ({ posts }) => {
-  const router = useRouter();
-
-  const handleClick = (id) => {
-    router.push(`${id}/comments`);
-  };
   return (
     <Box>
       {posts.slice(0, 4).map((post) => {
         return (
-          <Box
-            key={post.id}
-            w="30%"
-            mt="2rem"
-            ml="2rem"
-            mb="2rem"
-            boxShadow={"lg"}
-            bg="green.500"
-            padding={"1rem"}
-            cursor="pointer"
-            onClick={() => handleClick(post.id)}
-          >
-            <Box>
-              <Text fontWeight={"bold"}>ID</Text>
-              <Text>{post.id}</Text>
+          <Link key={post.id} href={`/postLinkingToComment/${post.id}`}>
+            <Box
+              w="30%"
+              mt="2rem"
+              ml="2rem"
+              mb="2rem"
+              boxShadow={"lg"}
+              bg="green.500"
+              padding={"1rem"}
+              cursor="pointer"
+            >
+              <Box>
+                <Text fontWeight={"bold"}>ID</Text>
+                <Text>{post.id}</Text>
+              </Box>
+              <Box>
+                <Text fontWeight={"bold"}>Title</Text>
+                <Text>{post.title}</Text>
+              </Box>
+              <Box>
+                <Text fontWeight={"bold"}>Body</Text>
+                <Text>{post.body}</Text>
+              </Box>
             </Box>
-            <Box>
-              <Text fontWeight={"bold"}>Title</Text>
-              <Text>{post.title}</Text>
-            </Box>
-            <Box>
-              <Text fontWeight={"bold"}>Body</Text>
-              <Text>{post.body}</Text>
-            </Box>
-          </Box>
+          </Link>
         );
       })}
     </Box>

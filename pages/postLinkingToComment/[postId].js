@@ -21,21 +21,29 @@ export default Comments;
 //getStaticPaths used for  pre-rendering pages that use dynamic routes
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { param: ["2", "comments"] } }],
-    fallback: "blocking",
+    paths: [
+      { params: { postId: "1" } },
+      { params: { postId: "3" } },
+      {
+        params: { postId: "2" },
+        // with i18n configured the locale for the path can be returned as well
+      },
+    ],
+    fallback: false,
+    // there is also fallback:true which is simlar to fallback:blocking , but
+    //fallback:"true" , will also show the loading or computing taking place events.
     //The paths that have not been generated at build time will not result in a 404 page.
-    //Instead, fallback: true This will be used to automatically render
+    //Instead, fallback: "blocking" ,This will be used to automatically render
     //the page with the required props.
   };
 }
-
 // by getStaticProps the page is available at build time ahead of a user’s request which helps in SEO
 export async function getStaticProps(context) {
   console.log("contex", context);
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${context.params.param[0]}/comments`
+    `https://jsonplaceholder.typicode.com/posts/${context.params.postId}/comments`
   );
   const comments = await res.json();
 

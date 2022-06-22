@@ -48,8 +48,10 @@ export async function getStaticPaths() {
       },
     ],
     fallback: false,
+    // there is also fallback:true which is simlar to fallback:blocking , but
+    //fallback:"true" , will also show the loading or computing taking place events.
     //The paths that have not been generated at build time will not result in a 404 page.
-    //Instead, fallback: true This will be used to automatically render
+    //Instead, fallback: "blocking" ,This will be used to automatically render
     //the page with the required props.
   };
 }
