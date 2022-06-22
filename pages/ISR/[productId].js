@@ -26,8 +26,8 @@ export async function getStaticPaths() {
 }
 
 // This function gets called at build time on server-side.
-// It may be called again, on a serverless function, if
-// revalidation is enabled and a new request comes in
+// It is again called on a new request  since revalidate is enabled here,
+// revalidate is enabled to ensure the user wouldnt get stale data.
 export async function getStaticProps(context) {
   const res = await fetch(
     `http://localhost:4000/products/${context.params.productId}`
