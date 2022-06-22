@@ -2,7 +2,7 @@ import { Box, GridItem, Input, Text } from "@chakra-ui/react";
 import { Textarea, Grid, Button, useToast } from "@chakra-ui/react";
 
 import React, { useEffect } from "react";
-import { useContactForm } from "../pages/contactUs/useContactForm";
+import { useContactForm } from "./useContactForm";
 
 export const ContactForm = () => {
   const { formik } = useContactForm();
