@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import * as Yup from "yup";
 import { useToast } from "@chakra-ui/react";
 import { useFormik } from "formik";
-import { useContactApi } from "./useContactApi";
+import { useContactApi } from "./API/useContactApi";
 
 export const useContactForm = () => {
   const { postContactMutation } = useContactApi();
