@@ -1,7 +1,13 @@
 import React from "react";
+import { Box, Center, Flex, HStack, Text, VStack } from "@chakra-ui/react";
 
-const IncrementalStaticRegeneration = () => {
-  return <div>index</div>;
+const IncrementalStaticRegeneration = ({ product }) => {
+  return (
+    <Box ml="2rem" mt="1rem">
+      <Text>product: {product.title}</Text>
+      <Text>price: {product.price}</Text>
+    </Box>
+  );
 };
 
 export default IncrementalStaticRegeneration;
@@ -11,15 +17,15 @@ export default IncrementalStaticRegeneration;
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
   const res = await fetch("http://localhost:3000/products/1");
-  const posts = await res.json();
+  const product = await res.json();
 
   return {
     props: {
-      posts,
+      product,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 10, // In seconds
+    // revalidate: 1, // In seconds
   };
 }
