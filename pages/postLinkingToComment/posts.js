@@ -18,6 +18,7 @@ const Posts = ({ posts }) => {
               bg="green.500"
               padding={"1rem"}
               cursor="pointer"
+              borderRadius={"0.5rem"}
             >
               <Box>
                 <Text fontWeight={"bold"}>ID</Text>

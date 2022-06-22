@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { Box, Center, Flex, HStack, Text, VStack } from "@chakra-ui/react";
 
 // by adding three dot on the file name with brackets eg: [...param].js , which can be used to catch
 // any route with in that page
@@ -8,11 +9,26 @@ const Comments = ({ comments }) => {
   const param = router.query.param || [];
   console.log("param", router);
   return (
-    <div>
+    <>
       {comments.map((comment) => {
-        return <h1 key={comment.id}>param: {comment.email}</h1>;
+        return (
+          <Box
+            key={comment.id}
+            bg="blue.500"
+            boxShadow={"lg"}
+            w="30%"
+            mt="1rem"
+            ml="2rem"
+            p="1rem"
+            borderRadius={"0.5rem"}
+          >
+            <Text>Comment Id :{comment.id}</Text>
+            <Text>Email: {comment.email}</Text>
+            <Text>comment: {comment.name}</Text>
+          </Box>
+        );
       })}
-    </div>
+    </>
   );
 };
 
