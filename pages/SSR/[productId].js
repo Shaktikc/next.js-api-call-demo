@@ -13,7 +13,7 @@ function ServerSideRendering({ data }) {
 
 // This gets called on every request
 export async function getServerSideProps(context) {
-  // Fetch data from external API
+  // Fetch data from external API and also any logic can be written here
   const res = await fetch(
     `http://localhost:4000/products/${context.params.productId}`
   );
