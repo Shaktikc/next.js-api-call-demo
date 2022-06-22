@@ -7,7 +7,6 @@ import { ContactInfo } from "../../Components/contactUs/ContactInfo";
 import { ContactForm } from "../../Components/contactus/ContactForm";
 
 const ContactUs = ({ res }) => {
-  //
   return (
     <Flex gap={"5rem"} mt="4rem">
       {/* this component is SG in build time by using getStaticProps */}
