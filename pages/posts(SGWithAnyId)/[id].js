@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 
 // by getStaticProps the page is available at build time ahead of a user’s request which helps in SEO
 export async function getStaticProps(context) {
-  console.log("contex", context);
+  console.log("contex", context.params.id);
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const res = await fetch(
