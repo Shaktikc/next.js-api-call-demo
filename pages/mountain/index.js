@@ -53,8 +53,8 @@ const Mountain = () => {
           src={cloud}
           width="550%"
           // height="20%"
-          w="200"
-          h="200"
+          // w="200"
+          // h="200"
           borderWidth={5}
           borderStyle="solid"
           // zIndex={"2"}
