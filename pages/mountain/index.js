@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import mingmadai from "../../imges/mingmadai.png";
 import Rectangle from "../../imges/Rectangle.png";
+import cloud from "../../imges/cloud.png";
 import { Box } from "@chakra-ui/react";
 
 const Mountain = () => {
@@ -12,6 +13,9 @@ const Mountain = () => {
       </Box>
       <Box zIndex="-1">
         <Image src={Rectangle} alt="nicee" objectFit="cover" layout="fill" />
+      </Box>
+      <Box>
+        <Image src={cloud} alt="nicee" objectFit="cover" layout="fill" />
       </Box>
     </Box>
   );
