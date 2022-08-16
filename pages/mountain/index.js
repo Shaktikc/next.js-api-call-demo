@@ -18,12 +18,13 @@ const ProductImage = chakra(NextImage, {
       "placeholder",
       "blurDataURL",
       "loader ",
+      "layout",
     ].includes(prop),
 });
 const Mountain = () => {
   return (
-    <Box pos="relative">
-      <Box zIndex={1}>
+    <Box pos="relative" w="100vw" h="100vh">
+      <Box zIndex={1} w="100%" h="100%" pos="absolute">
         <ProductImage
           src={mingmadai}
           alt="nicee"
@@ -32,7 +33,7 @@ const Mountain = () => {
         />
       </Box>
 
-      <Box pos="absolute" top="0" zIndex={-1}>
+      <Box pos="absolute" top="0" zIndex={-1} w="100%" h="100%">
         {" "}
         <ProductImage
           src={Rectangle}
