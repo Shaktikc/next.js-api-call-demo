@@ -4,8 +4,9 @@ import mingmadai from "../../imges/mingmadai.png";
 import Rectangle from "../../imges/Rectangle.png";
 import mountain from "../../imges/mountain.png";
 import cloud from "../../imges/cloud.png";
-import { Box, chakra } from "@chakra-ui/react";
+import { Box, chakra, keyframes } from "@chakra-ui/react";
 import NextImage from "next/image";
+import { motion } from "framer-motion";
 
 const ProductImage = chakra(NextImage, {
   baseStyle: { maxH: 120, maxW: 120 },
@@ -22,6 +23,16 @@ const ProductImage = chakra(NextImage, {
       "layout",
     ].includes(prop),
 });
+
+const animationKeyframes = keyframes`
+  0% { transform: scale(1) rotate(0); border-radius: 20%; }
+  25% { transform: scale(2) rotate(0); border-radius: 20%; }
+  50% { transform: scale(2) rotate(270deg); border-radius: 50%; }
+  75% { transform: scale(1) rotate(270deg); border-radius: 50%; }
+  100% { transform: scale(1) rotate(0); border-radius: 20%; }
+`;
+
+const animation = `${animationKeyframes} 2s ease-in-out infinite`;
 const Mountain = () => {
   return (
     <Box pos="relative" w="100vw" h="100vh">
@@ -48,7 +59,14 @@ const Mountain = () => {
         <Image src={cloud} alt="nicee" objectFit="cover" layout="fill" />
       </Box> */}
 
-      <Box pos="absolute" top="1%" left={"15%"} zIndex={10}>
+      <Box
+        as={motion.div}
+        animation={animation}
+        pos="absolute"
+        top="1%"
+        left={"15%"}
+        zIndex={10}
+      >
         <ProductImage
           src={cloud}
           width="550%"
