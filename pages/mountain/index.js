@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import mingmadai from "../../imges/mingmadai.png";
 import Rectangle from "../../imges/Rectangle.png";
+import mountain from "../../imges/mountain.png";
 import cloud from "../../imges/cloud.png";
 import { Box, chakra } from "@chakra-ui/react";
 import NextImage from "next/image";
@@ -50,10 +51,24 @@ const Mountain = () => {
       <Box pos="absolute" top="1%" left={"15%"} zIndex={1}>
         <ProductImage
           src={cloud}
-          width="400%"
+          width="550%"
           // height="20%"
           w="200"
           h="200"
+          borderWidth={5}
+          borderStyle="solid"
+          // zIndex={"2"}
+          layout="fixed"
+          objectFit={"contain"}
+        />
+      </Box>
+      <Box pos="absolute" top="15%" left={"21%"} zIndex={1}>
+        <ProductImage
+          src={mountain}
+          width="370%"
+          // height="20%"
+          // w="200"
+          // h="200"
           borderWidth={5}
           borderStyle="solid"
           // zIndex={"2"}
