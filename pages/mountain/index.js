@@ -47,17 +47,18 @@ const Mountain = () => {
         <Image src={cloud} alt="nicee" objectFit="cover" layout="fill" />
       </Box> */}
 
-      <Box pos="absolute" top="0">
+      <Box pos="absolute" top="1%" left={"15%"}>
         <ProductImage
           src={cloud}
-          width={120}
-          height={120}
+          width="400%"
+          // height="20%"
           w="200"
           h="200"
           borderWidth={5}
           borderStyle="solid"
           // zIndex={"2"}
           layout="fixed"
+          objectFit={"contain"}
         />
       </Box>
     </Box>
