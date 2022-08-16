@@ -1,12 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import mingmadai from "../../imges/mingmadai.png";
+import Rectangle from "../../imges/Rectangle.png";
 import { Box } from "@chakra-ui/react";
 
 const Mountain = () => {
   return (
-    <Box width={"100vw"} height="100vh" pos="relative">
-      <Image src={mingmadai} alt="nicee" objectFit="cover" layout="fill" />
+    <Box>
+      <Box width={"100vw"} height="100vh" pos="relative" zIndex={"1"}>
+        <Image src={mingmadai} alt="nicee" objectFit="cover" layout="fill" />
+      </Box>
+      <Box zIndex="-1">
+        <Image src={Rectangle} alt="nicee" objectFit="cover" layout="fill" />
+      </Box>
     </Box>
   );
 };
