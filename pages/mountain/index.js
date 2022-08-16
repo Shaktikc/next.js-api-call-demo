@@ -25,11 +25,8 @@ const ProductImage = chakra(NextImage, {
 });
 
 const animationKeyframes = keyframes`
-  0% { transform: scale(1) rotate(0); border-radius: 20%; }
-  25% { transform: scale(2) rotate(0); border-radius: 20%; }
-  50% { transform: scale(2) rotate(270deg); border-radius: 50%; }
-  75% { transform: scale(1) rotate(270deg); border-radius: 50%; }
-  100% { transform: scale(1) rotate(0); border-radius: 20%; }
+  0%   { left:0px; top:0px;}
+  25%  { left:200px; top:0px;}
 `;
 
 const animation = `${animationKeyframes} 2s ease-in-out infinite`;
