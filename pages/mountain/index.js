@@ -23,24 +23,30 @@ const ProductImage = chakra(NextImage, {
 const Mountain = () => {
   return (
     <Box pos="relative">
-      <ProductImage
-        src={mingmadai}
-        alt="nicee"
-        objectFit="cover"
-        layout="fill"
-      />
+      <Box zIndex={1}>
+        <ProductImage
+          src={mingmadai}
+          alt="nicee"
+          objectFit="cover"
+          layout="fill"
+        />
+      </Box>
 
-      <ProductImage
-        src={Rectangle}
-        alt="nicee"
-        objectFit="cover"
-        layout="fill"
-      />
+      <Box pos="absolute" top="0" zIndex={-1}>
+        {" "}
+        <ProductImage
+          src={Rectangle}
+          alt="nicee"
+          objectFit="cover"
+          layout="fill"
+        />
+      </Box>
 
       {/* <Box>
         <Image src={cloud} alt="nicee" objectFit="cover" layout="fill" />
       </Box> */}
-      {/* <div style={{ position: "absolute", top: "0" }}>
+
+      <Box pos="absolute" top="0">
         <ProductImage
           src={cloud}
           width={120}
@@ -49,25 +55,7 @@ const Mountain = () => {
           h="200"
           borderWidth={5}
           borderStyle="solid"
-          pos="absolute"
-          zIndex={"2"}
-          top="400px"
-          layout="fixed"
-          bg="green"
-        />
-      </div> */}
-      <Box pos="absolute" bg="black" top="0">
-        <ProductImage
-          src={cloud}
-          width={120}
-          height={120}
-          w="200"
-          h="200"
-          borderWidth={5}
-          borderStyle="solid"
-          pos="absolute"
-          zIndex={"2"}
-          top="400px"
+          // zIndex={"2"}
           layout="fixed"
         />
       </Box>
