@@ -31,9 +31,10 @@ const animationKeyframes = keyframes`
   100%  { left:250px; top:0px;}
 `;
 
-const mountainKeyframes = keyframes`
-  0%   {left:45px top:50px;}
-  50%  { left:50px; top:50px;}
+const cloudKeyframes = keyframes`
+  0%   {left:200px; top:10px;}
+  50%  { left:300px; top:10px;}
+  100%  { left:200px; top:10px;}
 `;
 
 const textDetailKeyframes = keyframes`
@@ -42,7 +43,7 @@ const textDetailKeyframes = keyframes`
 `;
 
 const animation = `${animationKeyframes} 5s linear infinite`;
-const mountainAnimation = `${mountainKeyframes} 15s linear infinite`;
+const cloudAnimation = `${cloudKeyframes} 10s ease-in-out infinite`;
 // const textDetailAnimation = `${textDetailKeyframes} 2s linear infinite `;
 const Mountain = () => {
   return (
@@ -92,13 +93,14 @@ const Mountain = () => {
           objectFit={"contain"}
         />
       </Box>
-      {/* <Box
+      <Box
         as={motion.div}
-        animation={mountainAnimation}
+        animation={cloudAnimation}
         pos="absolute"
         top="1%"
         left={"25%"}
         zIndex={1}
+        // bg="red"
       >
         <ProductImage
           src={cloud}
@@ -112,7 +114,7 @@ const Mountain = () => {
           layout="fixed"
           objectFit={"contain"}
         />
-      </Box> */}
+      </Box>
       <Box pos="absolute" top="15%" left={"21%"} zIndex={5}>
         <Box pos="absolute">
           <ProductImage
