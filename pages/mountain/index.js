@@ -27,16 +27,16 @@ const ProductImage = chakra(NextImage, {
 
 const animationKeyframes = keyframes`
   0%   {  top:0px;}
-  25%  { left:200px; top:0px;}
+  100%  { left:200px; top:0px;}
 `;
 
 const mountainKeyframes = keyframes`
   0%   { left:-300px;top:0px;}
-  25%  { left:200px; top:0px;}
+  100%  { left:10px; top:0px;}
 `;
 
 const animation = `${animationKeyframes} 3s linear infinite`;
-const mountainAnimation = `${mountainKeyframes} 5s linear infinite`;
+const mountainAnimation = `${mountainKeyframes} 2s linear `;
 const Mountain = () => {
   return (
     <Box pos="relative" w="100vw" h="100vh">
