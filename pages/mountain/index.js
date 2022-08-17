@@ -35,8 +35,14 @@ const mountainKeyframes = keyframes`
   100%  { left:10px; top:0px;}
 `;
 
+const textDetailKeyframes = keyframes`
+  0%   { right:400px;top:130px;}
+  100%  { left:0px; top:130px;}
+`;
+
 const animation = `${animationKeyframes} 3s linear infinite`;
 const mountainAnimation = `${mountainKeyframes} 2s linear `;
+const textDetailAnimation = `${textDetailKeyframes} 2s linear  `;
 const Mountain = () => {
   return (
     <Box pos="relative" w="100vw" h="100vh">
@@ -100,7 +106,14 @@ const Mountain = () => {
           />
         </Box>
       </Box>
-      <Box top="21%" left="48%" pos="absolute" zIndex={1}>
+      <Box
+        top="21%"
+        left="48%"
+        as={motion.div}
+        animation={textDetailAnimation}
+        pos="absolute"
+        zIndex={1}
+      >
         {" "}
         <Text color="white" fontSize="4xl">
           Mount Everest
