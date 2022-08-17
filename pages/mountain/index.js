@@ -26,23 +26,24 @@ const ProductImage = chakra(NextImage, {
 });
 
 const animationKeyframes = keyframes`
-  0%   {  top:0px;}
-  100%  { left:200px; top:0px;}
+  0%   {left:250px; top:0px;}
+  50%  { left:300px; top:0px;}
+  100%  { left:250px; top:0px;}
 `;
 
 const mountainKeyframes = keyframes`
-  0%   { left:-300px;top:0px;}
-  100%  { left:10px; top:0px;}
+  0%   {left:45px top:50px;}
+  50%  { left:50px; top:50px;}
 `;
 
 const textDetailKeyframes = keyframes`
-  0%   { right:400px;top:130px;}
-  100%  { left:0px; top:130px;}
+  0%   { top:130px;}
+  100%  { left:700px; top:130px;}
 `;
 
-const animation = `${animationKeyframes} 3s linear infinite`;
-const mountainAnimation = `${mountainKeyframes} 2s linear `;
-const textDetailAnimation = `${textDetailKeyframes} 2s linear  `;
+const animation = `${animationKeyframes} 5s linear infinite`;
+const mountainAnimation = `${mountainKeyframes} 15s linear infinite`;
+// const textDetailAnimation = `${textDetailKeyframes} 2s linear infinite `;
 const Mountain = () => {
   return (
     <Box pos="relative" w="100vw" h="100vh">
@@ -76,6 +77,7 @@ const Mountain = () => {
         top="1%"
         left={"15%"}
         zIndex={10}
+        // bg="green"
       >
         <ProductImage
           src={cloud}
@@ -90,8 +92,29 @@ const Mountain = () => {
           objectFit={"contain"}
         />
       </Box>
-      <Box pos="absolute" top="15%" left={"21%"} zIndex={1}>
-        <Box as={motion.div} animation={mountainAnimation} pos="absolute">
+      {/* <Box
+        as={motion.div}
+        animation={mountainAnimation}
+        pos="absolute"
+        top="1%"
+        left={"25%"}
+        zIndex={1}
+      >
+        <ProductImage
+          src={cloud}
+          width="550%"
+          // height="20%"
+          // w="200"
+          // h="200"
+          borderWidth={5}
+          borderStyle="solid"
+          // zIndex={"2"}
+          layout="fixed"
+          objectFit={"contain"}
+        />
+      </Box> */}
+      <Box pos="absolute" top="15%" left={"21%"} zIndex={5}>
+        <Box pos="absolute">
           <ProductImage
             src={mountain}
             width="370%"
@@ -106,14 +129,7 @@ const Mountain = () => {
           />
         </Box>
       </Box>
-      <Box
-        top="21%"
-        left="48%"
-        as={motion.div}
-        animation={textDetailAnimation}
-        pos="absolute"
-        zIndex={1}
-      >
+      <Box top="21%" left="48%" pos="absolute" zIndex={1} w="50%">
         {" "}
         <Text color="white" fontSize="4xl">
           Mount Everest
