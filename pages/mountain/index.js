@@ -5,7 +5,7 @@ import Rectangle from "../../imges/Rectangle.png";
 import mountain from "../../imges/mountain.png";
 import pin from "../../imges/pin.png";
 import cloud from "../../imges/cloud.png";
-import { Box, chakra, keyframes, Text } from "@chakra-ui/react";
+import { Box, chakra, HStack, keyframes, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
 import { motion } from "framer-motion";
 
@@ -92,28 +92,36 @@ const Mountain = () => {
           objectFit={"contain"}
         />
       </Box>
-      <Text
-        zIndex={1}
-        color="white"
-        fontSize="4xl"
-        top="21%"
-        left="48%"
-        pos="absolute"
-      >
-        <ProductImage
-          src={pin}
-          // width="370%"
-          // height="20%"
-          // w="200"
-          // h="200"
-          borderWidth={5}
-          borderStyle="solid"
-          // zIndex={"2"}
-          layout="fixed"
-          objectFit={"contain"}
-        />
-        Mount Everest
-      </Text>
+      <Box top="21%" left="48%" pos="absolute" zIndex={1}>
+        {" "}
+        <Text color="white" fontSize="4xl">
+          Mount Everest
+        </Text>
+        <HStack zIndex={1} pos="absolute">
+          <ProductImage
+            src={pin}
+            // width="370%"
+            // height="20%"
+            // w="200"
+            // h="200"
+            borderWidth={5}
+            borderStyle="solid"
+            // zIndex={"2"}
+            layout="fixed"
+            objectFit={"contain"}
+          />
+          <Text color="white" fontSize="xl">
+            Nepal
+          </Text>
+        </HStack>
+        <Text color="white" fontSize="xl" mt="2rem" w="70%">
+          here will be details here will be detailshere will be detailshere will
+          be detailshere will be detailshere will be detailshere will be
+          detailshere will be detailshere will be detailshere will be detaihere
+          will be detailshere will be detailshere will be detailshere will be
+          detailshere will be detailshere will be detailshere will be details.
+        </Text>
+      </Box>
     </Box>
   );
 };
