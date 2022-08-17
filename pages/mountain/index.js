@@ -5,7 +5,14 @@ import Rectangle from "../../imges/Rectangle.png";
 import mountain from "../../imges/mountain.png";
 import pin from "../../imges/pin.png";
 import cloud from "../../imges/cloud.png";
-import { Box, chakra, HStack, keyframes, Text } from "@chakra-ui/react";
+import {
+  Box,
+  chakra,
+  HStack,
+  keyframes,
+  SlideFade,
+  Text,
+} from "@chakra-ui/react";
 import NextImage from "next/image";
 import { motion } from "framer-motion";
 
@@ -26,15 +33,15 @@ const ProductImage = chakra(NextImage, {
 });
 
 const animationKeyframes = keyframes`
-  0%   {left:250px; top:0px;}
-  50%  { left:300px; top:0px;}
-  100%  { left:250px; top:0px;}
+  0%   {left:200px; top:0px;}
+  50%  { left:220px; top:0px;}
+  100%  { left:200px; top:0px;}
 `;
 
 const cloudKeyframes = keyframes`
-  0%   {left:200px; top:10px;}
-  50%  { left:300px; top:10px;}
-  100%  { left:200px; top:10px;}
+  0%   {left:200px; top:80px;}
+  50%  { left:220px; top:80px;}
+  100%  { left:200px; top:80px;}
 `;
 
 const textDetailKeyframes = keyframes`
@@ -42,8 +49,8 @@ const textDetailKeyframes = keyframes`
   100%  { left:700px; top:130px;}
 `;
 
-const animation = `${animationKeyframes} 5s linear infinite`;
-const cloudAnimation = `${cloudKeyframes} 10s ease-in-out infinite`;
+const animation = `${animationKeyframes} 4s linear infinite`;
+const cloudAnimation = `${cloudKeyframes} 5s ease-in-out infinite`;
 // const textDetailAnimation = `${textDetailKeyframes} 2s linear infinite `;
 const Mountain = () => {
   return (
@@ -132,34 +139,42 @@ const Mountain = () => {
         </Box>
       </Box>
       <Box top="21%" left="48%" pos="absolute" zIndex={1} w="50%">
-        {" "}
-        <Text color="white" fontSize="4xl">
-          Mount Everest
-        </Text>
-        <HStack zIndex={1} pos="absolute">
-          <ProductImage
-            src={pin}
-            // width="370%"
-            // height="20%"
-            // w="200"
-            // h="200"
-            borderWidth={5}
-            borderStyle="solid"
-            // zIndex={"2"}
-            layout="fixed"
-            objectFit={"contain"}
-          />
-          <Text color="white" fontSize="xl">
-            Nepal
+        <SlideFade
+          direction="bottom"
+          in={true}
+          offsetY="50px"
+          transition={{ enter: { duration: 0.4 } }}
+        >
+          {" "}
+          <Text color="white" fontSize="4xl">
+            Mount Everest
           </Text>
-        </HStack>
-        <Text color="white" fontSize="xl" mt="2rem" w="70%">
-          here will be details here will be detailshere will be detailshere will
-          be detailshere will be detailshere will be detailshere will be
-          detailshere will be detailshere will be detailshere will be detaihere
-          will be detailshere will be detailshere will be detailshere will be
-          detailshere will be detailshere will be detailshere will be details.
-        </Text>
+          <HStack zIndex={1} pos="absolute">
+            <ProductImage
+              src={pin}
+              // width="370%"
+              // height="20%"
+              // w="200"
+              // h="200"
+              borderWidth={5}
+              borderStyle="solid"
+              // zIndex={"2"}
+              layout="fixed"
+              objectFit={"contain"}
+            />
+            <Text color="white" fontSize="xl">
+              Nepal
+            </Text>
+          </HStack>
+          <Text color="white" fontSize="xl" mt="2rem" w="70%">
+            here will be details here will be detailshere will be detailshere
+            will be detailshere will be detailshere will be detailshere will be
+            detailshere will be detailshere will be detailshere will be
+            detaihere will be detailshere will be detailshere will be
+            detailshere will be detailshere will be detailshere will be
+            detailshere will be details.
+          </Text>
+        </SlideFade>{" "}
       </Box>
     </Box>
   );
