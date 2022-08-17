@@ -30,7 +30,13 @@ const animationKeyframes = keyframes`
   25%  { left:200px; top:0px;}
 `;
 
+const mountainKeyframes = keyframes`
+  0%   { left:-300px;top:0px;}
+  25%  { left:200px; top:0px;}
+`;
+
 const animation = `${animationKeyframes} 3s linear infinite`;
+const mountainAnimation = `${mountainKeyframes} 5s linear infinite`;
 const Mountain = () => {
   return (
     <Box pos="relative" w="100vw" h="100vh">
@@ -79,18 +85,20 @@ const Mountain = () => {
         />
       </Box>
       <Box pos="absolute" top="15%" left={"21%"} zIndex={1}>
-        <ProductImage
-          src={mountain}
-          width="370%"
-          // height="20%"
-          // w="200"
-          // h="200"
-          borderWidth={5}
-          borderStyle="solid"
-          // zIndex={"2"}
-          layout="fixed"
-          objectFit={"contain"}
-        />
+        <Box as={motion.div} animation={mountainAnimation} pos="absolute">
+          <ProductImage
+            src={mountain}
+            width="370%"
+            // height="20%"
+            // w="200"
+            // h="200"
+            borderWidth={5}
+            borderStyle="solid"
+            // zIndex={"2"}
+            layout="fixed"
+            objectFit={"contain"}
+          />
+        </Box>
       </Box>
       <Box top="21%" left="48%" pos="absolute" zIndex={1}>
         {" "}
