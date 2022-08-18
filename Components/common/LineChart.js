@@ -23,6 +23,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  updateMode: "resize",
   plugins: {
     legend: false,
     tooltips: {
@@ -32,37 +33,23 @@ export const options = {
       },
     },
   },
-  // scales: {
-  //   y: {
-  //     display: false, // Hide Y axis labels
-  //   },
-  //   x: {
-  //     display: false, // Hide X axis labels
-  //   },
-  // },
+  scales: {
+    y: {
+      display: false, // Hide Y axis labels
+    },
+    x: {
+      display: false, // Hide X axis labels
+    },
+  },
 };
 
-const labels = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "89",
-  "khihk",
-  "89",
-  "89",
-
-  "89",
-];
+const labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 export const data = {
   labels,
   datasets: [
     {
-      data: [34, 45, 555, 56, 400, 100],
+      data: [150, 500, 200, 350, 250, 320, 200, 280, 150],
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
     },
