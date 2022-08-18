@@ -45,7 +45,7 @@ export const options = {
 
 const labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-export function LineChart() {
+export function LineChart({ setMountainInfo, setSpecificIndex }) {
   const chartRef = useRef();
   const [arrayData, setArrayData] = useState([
     150, 500, 200, 350, 250, 320, 200, 280, 150,
@@ -55,12 +55,20 @@ export function LineChart() {
     console.log(getElementAtEvent(chartRef.current, event));
     if (getElementAtEvent(chartRef.current, event)[0]?.index === 1) {
       // console.log("7");
+      setSpecificIndex(0);
       setArrayData([150, 500, 200, 350, 250, 320, 200, 280, 150]);
       return;
     }
     if (getElementAtEvent(chartRef.current, event)[0]?.index === 3) {
       // console.log("33");
+      setSpecificIndex(1);
       setArrayData([150, 350, 200, 500, 200, 320, 200, 280, 150]);
+      setMountainInfo({
+        title: "Ketu mountian",
+        DetailText:
+          "lkdsjflk lkjdflkj sadlkfj lkasdjf lkadsfjlk jlk sfkja lkjsaflk ajflkadsfj lkadfsj lkjf lkj dfk jaslkf jaslkfj ",
+        state: true,
+      });
       return;
     }
     if (getElementAtEvent(chartRef.current, event)[0]?.index === 5) {
@@ -85,7 +93,7 @@ export function LineChart() {
     datasets: [
       {
         data: arrayData,
-        borderColor: "#F5FFFA",
+        borderColor: "green",
         backgroundColor: "white",
       },
     ],

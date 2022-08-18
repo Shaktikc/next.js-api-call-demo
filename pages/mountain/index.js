@@ -20,6 +20,20 @@ import NextImage from "next/image";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { LineChart } from "../../Components/common/LineChart";
 
+const mountainData = [
+  {
+    title: "Ketu mountian",
+    DetailText:
+      "lkdsjflk lkjdflkj sadlkfj lkasdjf lkadsfjlk jlk sfkja lkjsaflk ajflkadsfj lkadfsj lkjf lkj dfk jaslkf jaslkfj ",
+  },
+  {
+    title: "Mount Everest",
+    DetailText:
+      "here will be details here will be detailshere will be,here will be details here will be detailshere will be",
+    state: true,
+  },
+];
+
 const ProductImage = chakra(NextImage, {
   baseStyle: { maxH: 120, maxW: 120 },
   shouldForwardProp: (prop) =>
@@ -57,6 +71,14 @@ const animation = `${animationKeyframes} 4s linear infinite`;
 const cloudAnimation = `${cloudKeyframes} 5s ease-in-out infinite`;
 // const textDetailAnimation = `${textDetailKeyframes} 2s linear infinite `;
 const Mountain = () => {
+  const [mountainInfo, setMountainInfo] = useState({
+    title: "Mount Everest",
+    DetailText:
+      "here will be details here will be detailshere will be,here will be details here will be detailshere will be",
+    state: true,
+  });
+  const [specificIndex, setSpecificIndex] = useState(0);
+  console.log("specificIndex", specificIndex);
   return (
     <Box>
       <Box zIndex={2} w="100%" h="100vh" pos="absolute">
@@ -133,47 +155,55 @@ const Mountain = () => {
             />
           </GridItem>
           <GridItem colSpan={1}>
-            <SlideFade
-              direction="bottom"
-              in={true}
-              offsetY="50px"
-              transition={{ enter: { duration: 0.4 } }}
-            >
-              {" "}
-              <Text color="white" fontSize="3xl">
-                Mount Everest
-              </Text>
-              <HStack>
-                <ProductImage
-                  src={pin}
-                  // width="370%"
-                  // height="20%"
-                  // w="200"
-                  // h="200"
-                  borderWidth={5}
-                  borderStyle="solid"
-                  layout="fixed"
-                  objectFit={"contain"}
-                />
-                <Text color="white" fontSize="md">
-                  Nepal
-                </Text>
-              </HStack>
-              <Text color="white" fontSize="xl" mt="2rem" w="70%">
-                here will be details here will be detailshere will be
-                detailshere will be detailshere will be detailshere will be
-                detailshere will be detailshere will be detailshere will be
-                detailshere will be detaihere will be detailshere will be
-                detailshere will be detailshere will be detailshere will be
-                detailshere will be detailshere will be details.
-              </Text>
-            </SlideFade>
+            {mountainData.map((data, indx) => {
+              return (
+                <Box
+                  key={data.title}
+                  display={specificIndex === indx ? "block" : "none"}
+                >
+                  <SlideFade
+                    direction="bottom"
+                    in={specificIndex === indx ? true : false}
+                    // unmountOnExit={true}
+                    offsetY="50px"
+                    transition={{ enter: { duration: 0.4 } }}
+                  >
+                    {" "}
+                    <Text color="white" fontSize="3xl">
+                      {data.title}
+                    </Text>
+                    <HStack>
+                      <ProductImage
+                        src={pin}
+                        // width="370%"
+                        // height="20%"
+                        // w="200"
+                        // h="200"
+                        borderWidth={5}
+                        borderStyle="solid"
+                        layout="fixed"
+                        objectFit={"contain"}
+                      />
+                      <Text color="white" fontSize="md">
+                        Nepal
+                      </Text>
+                    </HStack>
+                    <Text color="white" fontSize="xl" mt="2rem" w="70%">
+                      {data.DetailText}
+                    </Text>
+                  </SlideFade>
+                </Box>
+              );
+            })}
           </GridItem>
         </Grid>
         <Grid templateColumns="repeat(11, 1fr)" gap={8}>
           <GridItem colStart={4} colSpan={4}>
             <Box>
-              <LineChart />
+              <LineChart
+                setMountainInfo={setMountainInfo}
+                setSpecificIndex={setSpecificIndex}
+              />
             </Box>
           </GridItem>
         </Grid>
