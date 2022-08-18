@@ -26,12 +26,14 @@ const mountainData = [
     title: "Ketu mountian",
     DetailText:
       "lkdsjflk lkjdflkj sadlkfj lkasdjf lkadsfjlk jlk sfkja lkjsaflk ajflkadsfj lkadfsj lkjf lkj dfk jaslkf jaslkfj ",
+    image: mountain,
   },
   {
     title: "Mount Everest",
     DetailText:
       "here will be details here will be detailshere will be,here will be details here will be detailshere will be",
     state: true,
+    image: ganesh,
   },
 ];
 
@@ -145,15 +147,34 @@ const Mountain = () => {
       <Box zIndex={2} pos={"absolute"} top={"137px"}>
         <Grid templateColumns="repeat(2, 1fr)" justifyItems="end" gap="6px">
           <GridItem colSpan={1}>
-            <ProductImage
-              src={mountain}
-              // borderWidth={5}
-              // borderStyle="solid"
-              // objectFit={"contain"}
-              width="400px"
-              height={"300px"}
-              zIndex={9}
-            />
+            {mountainData.map((data, indx) => {
+              return (
+                <Box
+                  key={data.title}
+                  display={specificIndex === indx ? "block" : "none"}
+                >
+                  <SlideFade
+                    direction="bottom"
+                    // in={true}
+                    in={specificIndex === indx ? true : false}
+                    // unmountOnExit={true}
+                    offsetY="50px"
+                    transition={{ enter: { duration: 0.4 } }}
+                  >
+                    {" "}
+                    <ProductImage
+                      src={data.image}
+                      // borderWidth={5}
+                      // borderStyle="solid"
+                      // objectFit={"contain"}
+                      width="400px"
+                      height={"300px"}
+                      zIndex={9}
+                    />
+                  </SlideFade>
+                </Box>
+              );
+            })}
           </GridItem>
           <GridItem colSpan={1}>
             {mountainData.map((data, indx) => {
