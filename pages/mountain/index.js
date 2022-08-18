@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { interpolate } from "flubber";
+import { LineChart } from "../../Components/common/LineChart";
 
 const ProductImage = chakra(NextImage, {
   baseStyle: { maxH: 120, maxW: 120 },
@@ -176,6 +176,7 @@ const Mountain = () => {
             detailshere will be details.
           </Text>
         </SlideFade>{" "}
+        <LineChart />
       </Box>
     </Box>
   );
