@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Line, getElementAtEvent } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -70,5 +70,11 @@ export const data = {
 };
 
 export function LineChart() {
-  return <Line options={options} data={data} />;
+  const chartRef = useRef();
+  const onClick = (event) => {
+    console.log(getElementAtEvent(chartRef.current, event));
+  };
+  return (
+    <Line ref={chartRef} options={options} data={data} onClick={onClick} />
+  );
 }
