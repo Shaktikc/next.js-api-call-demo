@@ -32,23 +32,37 @@ export const options = {
       },
     },
   },
-  scales: {
-    y: {
-      display: false, // Hide Y axis labels
-    },
-    x: {
-      display: false, // Hide X axis labels
-    },
-  },
+  // scales: {
+  //   y: {
+  //     display: false, // Hide Y axis labels
+  //   },
+  //   x: {
+  //     display: false, // Hide X axis labels
+  //   },
+  // },
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+const labels = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "89",
+  "khihk",
+  "89",
+  "89",
+
+  "89",
+];
 
 export const data = {
   labels,
   datasets: [
     {
-      data: [34, 45, 555, 56],
+      data: [34, 45, 555, 56, 400, 100],
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
     },

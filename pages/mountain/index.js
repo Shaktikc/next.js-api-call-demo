@@ -176,7 +176,7 @@ const Mountain = () => {
             detailshere will be details.
           </Text>
         </SlideFade>{" "}
-        <Box pos="absolute" zIndex={1} top="120%">
+        <Box pos="absolute" zIndex={1} top="120%" w="50%" mr="10%">
           <LineChart />
         </Box>
       </Box>
