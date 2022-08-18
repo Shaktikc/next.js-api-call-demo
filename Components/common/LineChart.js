@@ -33,14 +33,14 @@ export const options = {
       },
     },
   },
-  // scales: {
-  //   y: {
-  //     display: false, // Hide Y axis labels
-  //   },
-  //   x: {
-  //     display: false, // Hide X axis labels
-  //   },
-  // },
+  scales: {
+    y: {
+      display: false, // Hide Y axis labels
+    },
+    x: {
+      display: false, // Hide X axis labels
+    },
+  },
 };
 
 const labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -85,8 +85,8 @@ export function LineChart() {
     datasets: [
       {
         data: arrayData,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#F5FFFA",
+        backgroundColor: "white",
       },
     ],
   };
