@@ -76,8 +76,50 @@ const Mountain = () => {
           layout="fill"
         />
       </Box>
+      <Box
+        as={motion.div}
+        animation={animation}
+        pos="absolute"
+        // left={"15%"}
+        zIndex={10}
+        // bg="green"
+      >
+        <ProductImage
+          src={cloud}
+          width="550%"
+          // height="20%"
+          // w="200"
+          // h="200"
+          borderWidth={5}
+          borderStyle="solid"
+          // zIndex={"2"}
+          layout="fixed"
+          objectFit={"contain"}
+        />
+      </Box>
+      <Box
+        as={motion.div}
+        animation={cloudAnimation}
+        pos="absolute"
+        left={"25%"}
+        zIndex={1}
+        // bg="red"
+      >
+        <ProductImage
+          src={cloud}
+          width="550%"
+          // height="20%"
+          // w="200"
+          // h="200"
+          borderWidth={5}
+          borderStyle="solid"
+          // zIndex={"2"}
+          layout="fixed"
+          objectFit={"contain"}
+        />
+      </Box>
 
-      <Box zIndex={2} pos={"absolute"} top={"50px"}>
+      <Box zIndex={2} pos={"absolute"} top={"137px"}>
         <Grid templateColumns="repeat(2, 1fr)" justifyItems="end" gap="6px">
           <GridItem colSpan={1}>
             <ProductImage
@@ -87,6 +129,7 @@ const Mountain = () => {
               // objectFit={"contain"}
               width="400px"
               height={"300px"}
+              zIndex={9}
             />
           </GridItem>
           <GridItem colSpan={1}>
