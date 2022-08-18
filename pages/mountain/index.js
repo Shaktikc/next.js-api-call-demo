@@ -8,6 +8,7 @@ import cloud from "../../imges/cloud.png";
 import {
   Box,
   chakra,
+  Container,
   Grid,
   GridItem,
   HStack,
@@ -75,14 +76,17 @@ const Mountain = () => {
           layout="fill"
         />
       </Box>
-      <Box zIndex={2} pos={"absolute"} left="10%">
-        <Grid templateColumns="repeat(2, 1fr)">
+
+      <Box zIndex={2} pos={"absolute"} top={"50px"}>
+        <Grid templateColumns="repeat(2, 1fr)" justifyItems="end" gap="6px">
           <GridItem colSpan={1}>
             <ProductImage
               src={mountain}
-              borderWidth={5}
-              borderStyle="solid"
-              objectFit={"contain"}
+              // borderWidth={5}
+              // borderStyle="solid"
+              // objectFit={"contain"}
+              width="400px"
+              height={"300px"}
             />
           </GridItem>
           <GridItem colSpan={1}>
@@ -93,7 +97,7 @@ const Mountain = () => {
               transition={{ enter: { duration: 0.4 } }}
             >
               {" "}
-              <Text color="white" fontSize="4xl">
+              <Text color="white" fontSize="3xl">
                 Mount Everest
               </Text>
               <HStack>
@@ -108,7 +112,7 @@ const Mountain = () => {
                   layout="fixed"
                   objectFit={"contain"}
                 />
-                <Text color="white" fontSize="xl">
+                <Text color="white" fontSize="md">
                   Nepal
                 </Text>
               </HStack>
