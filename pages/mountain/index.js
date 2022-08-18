@@ -5,6 +5,7 @@ import Rectangle from "../../imges/Rectangle.png";
 import mountain from "../../imges/mountain.png";
 import pin from "../../imges/pin.png";
 import cloud from "../../imges/cloud.png";
+import ganesh from "../../imges/ganesh.jpg";
 import {
   Box,
   chakra,

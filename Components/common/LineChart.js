@@ -93,7 +93,7 @@ export function LineChart({ setMountainInfo, setSpecificIndex }) {
     datasets: [
       {
         data: arrayData,
-        borderColor: "green",
+        borderColor: "	#F5FFFA",
         backgroundColor: "white",
       },
     ],
