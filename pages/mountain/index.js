@@ -220,8 +220,8 @@ const Mountain = () => {
           </GridItem>
         </Grid>
         <Grid templateColumns="repeat(11, 1fr)" gap={8}>
-          <GridItem colStart={4} colSpan={4}>
-            <HStack mt="7rem">
+          <GridItem colStart={4} colSpan={5}>
+            <HStack mt="10rem">
               {" "}
               <MountainDraw />
               <MountainDraw />
