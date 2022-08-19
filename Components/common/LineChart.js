@@ -24,6 +24,13 @@ ChartJS.register(
 export const options = {
   responsive: true,
   maintainAspectRatio: false,
+  elements: {
+    point: {
+      radius: 0,
+      hoverRadius: 0,
+      hitRadius: 0,
+    },
+  },
   updateMode: "resize",
   plugins: {
     legend: false,
