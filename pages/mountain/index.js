@@ -221,60 +221,12 @@ const Mountain = () => {
         </Grid>
         <Grid templateColumns="repeat(11, 1fr)" gap={8}>
           <GridItem colStart={4} colSpan={4}>
-            <HStack mt="5rem">
+            <HStack mt="7rem">
               {" "}
-              <Box
-                // mt="5rem"
-                w="150px"
-                h="2px"
-                backgroundColor="white"
-                zIndex={10}
-                transform="rotate(-40deg) scaleX(1.4)"
-              >
-                {/* <LineChart
-                setMountainInfo={setMountainInfo}
-                setSpecificIndex={setSpecificIndex}
-              /> */}
-              </Box>
-              <Box
-                // mt="5rem"
-                w="150px"
-                h="2px"
-                backgroundColor="white"
-                zIndex={10}
-                transform="rotate(40deg) scaleX(1.4)"
-              >
-                {/* <LineChart
-                setMountainInfo={setMountainInfo}
-                setSpecificIndex={setSpecificIndex}
-              /> */}
-              </Box>
-              <Box
-                // mt="5rem"
-                w="150px"
-                h="2px"
-                backgroundColor="white"
-                zIndex={10}
-                transform="rotate(-40deg) scaleX(1.4)"
-              >
-                {/* <LineChart
-                setMountainInfo={setMountainInfo}
-                setSpecificIndex={setSpecificIndex}
-              /> */}
-              </Box>
-              <Box
-                // mt="5rem"
-                w="150px"
-                h="2px"
-                backgroundColor="white"
-                zIndex={10}
-                transform="rotate(40deg) scaleX(1.4)"
-              >
-                {/* <LineChart
-                setMountainInfo={setMountainInfo}
-                setSpecificIndex={setSpecificIndex}
-              /> */}
-              </Box>
+              <MountainDraw />
+              <MountainDraw />
+              <MountainDraw />
+              <MountainDraw />
             </HStack>
           </GridItem>
         </Grid>
@@ -286,3 +238,37 @@ const Mountain = () => {
 };
 
 export default Mountain;
+
+function MountainDraw() {
+  return (
+    <>
+      {" "}
+      <Box
+        // mt="5rem"
+        w="100px"
+        h="2px"
+        backgroundColor="white"
+        zIndex={10}
+        transform="rotate(-40deg) scaleX(1.5)"
+      >
+        {/* <LineChart
+                setMountainInfo={setMountainInfo}
+                setSpecificIndex={setSpecificIndex}
+              /> */}
+      </Box>
+      <Box
+        // mt="5rem"
+        w="100px"
+        h="2px"
+        backgroundColor="white"
+        zIndex={10}
+        transform="rotate(40deg) scaleX(1.5)"
+      >
+        {/* <LineChart
+                setMountainInfo={setMountainInfo}
+                setSpecificIndex={setSpecificIndex}
+              /> */}
+      </Box>
+    </>
+  );
+}
