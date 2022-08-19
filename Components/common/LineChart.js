@@ -27,19 +27,18 @@ export const options = {
   elements: {
     point: {
       radius: 0,
-      hoverRadius: 0,
-      hitRadius: 0,
+      hoverRadius: 10,
+      hitRadius: 10,
     },
   },
   updateMode: "resize",
+  tooltips: {
+    enabled: false,
+  },
   plugins: {
     legend: false,
-    tooltips: {
-      callbacks: {
-        label: (tooltipItem) => `${tooltipItem.yLabel}: ${tooltipItem.xLabel}`,
-        title: () => null,
-      },
-      mode: "nearest",
+    tooltip: {
+      enabled: false,
     },
   },
   scales: {
