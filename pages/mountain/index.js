@@ -223,14 +223,36 @@ const Mountain = () => {
           </GridItem>
         </Grid>
         <Grid templateColumns="repeat(11, 1fr)" gap={8}>
-          <GridItem colStart={4} colSpan={8}>
+          <GridItem colStart={4} colSpan={8} pos="relative">
             <Box
               color="white"
               ml="5.9rem"
               fontSize={"xl"}
-              onClick={() => setSpecificIndex(0)}
+              onClick={() => {
+                setSpecificIndex(0),
+                  setArrayData([150, 500, 200, 350, 250, 320, 200, 280, 150]);
+              }}
+              display={specificIndex === 0 ? "none" : "block"}
+              left="0.5%"
+              top="32%"
+              pos="absolute"
             >
               01
+            </Box>
+            <Box
+              color="white"
+              ml="5.9rem"
+              fontSize={"xl"}
+              pos="absolute"
+              left="20.5%"
+              top="33%"
+              onClick={() => {
+                setSpecificIndex(1);
+                setArrayData([150, 350, 200, 500, 200, 320, 200, 280, 150]);
+              }}
+              display={specificIndex === 1 ? "none" : "block"}
+            >
+              02
             </Box>
             <Box w="80%" mt="1rem" zIndex={10}>
               <LineChart
