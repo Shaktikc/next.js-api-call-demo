@@ -53,11 +53,13 @@ export const options = {
 
 const labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-export function LineChart({ setMountainInfo, setSpecificIndex }) {
+export function LineChart({
+  setMountainInfo,
+  setSpecificIndex,
+  setArrayData,
+  arrayData,
+}) {
   const chartRef = useRef();
-  const [arrayData, setArrayData] = useState([
-    150, 500, 200, 350, 250, 320, 200, 280, 150,
-  ]);
 
   const onClick = (event) => {
     console.log(getElementAtEvent(chartRef.current, event));

@@ -81,6 +81,9 @@ const Mountain = () => {
     state: true,
   });
   const [specificIndex, setSpecificIndex] = useState(0);
+  const [arrayData, setArrayData] = useState([
+    150, 500, 200, 350, 250, 320, 200, 280, 150,
+  ]);
   console.log("specificIndex", specificIndex);
   return (
     <Box>
@@ -221,10 +224,20 @@ const Mountain = () => {
         </Grid>
         <Grid templateColumns="repeat(11, 1fr)" gap={8}>
           <GridItem colStart={4} colSpan={8}>
-            <Box w="80%">
+            <Box
+              color="white"
+              ml="5.9rem"
+              fontSize={"xl"}
+              onClick={() => setSpecificIndex(0)}
+            >
+              01
+            </Box>
+            <Box w="80%" mt="1rem" zIndex={10}>
               <LineChart
                 setMountainInfo={setMountainInfo}
                 setSpecificIndex={setSpecificIndex}
+                setArrayData={setArrayData}
+                arrayData={arrayData}
               />
             </Box>
           </GridItem>
@@ -237,32 +250,3 @@ const Mountain = () => {
 };
 
 export default Mountain;
-
-function MountainDraw() {
-  return (
-    <>
-      {" "}
-      <Box
-        // mt="5rem"
-        w="100px"
-        h="2px"
-        backgroundColor="white"
-        zIndex={10}
-        transform="rotate(-40deg) scaleX(1.5)"
-      >
-        {/* <LineChart
-                setMountainInfo={setMountainInfo}
-                setSpecificIndex={setSpecificIndex}
-              /> */}
-      </Box>
-      <Box
-        // mt="5rem"
-        w="100px"
-        h="2px"
-        backgroundColor="white"
-        zIndex={10}
-        transform="rotate(40deg) scaleX(1.5)"
-      ></Box>
-    </>
-  );
-}
