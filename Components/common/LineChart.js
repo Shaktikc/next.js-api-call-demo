@@ -31,6 +31,7 @@ export const options = {
         label: (tooltipItem) => `${tooltipItem.yLabel}: ${tooltipItem.xLabel}`,
         title: () => null,
       },
+      mode: "nearest",
     },
   },
   scales: {
@@ -93,7 +94,7 @@ export function LineChart({ setMountainInfo, setSpecificIndex }) {
     datasets: [
       {
         data: arrayData,
-        borderColor: "	#F5FFFA",
+        borderColor: "	#F5FF",
         backgroundColor: "white",
       },
     ],
