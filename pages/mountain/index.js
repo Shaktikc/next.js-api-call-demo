@@ -220,14 +220,13 @@ const Mountain = () => {
           </GridItem>
         </Grid>
         <Grid templateColumns="repeat(11, 1fr)" gap={8}>
-          <GridItem colStart={4} colSpan={5}>
-            <HStack mt="10rem">
-              {" "}
-              <MountainDraw />
-              <MountainDraw />
-              <MountainDraw />
-              <MountainDraw />
-            </HStack>
+          <GridItem colStart={4} colSpan={8}>
+            <Box w="80%">
+              <LineChart
+                setMountainInfo={setMountainInfo}
+                setSpecificIndex={setSpecificIndex}
+              />
+            </Box>
           </GridItem>
         </Grid>
       </Box>
@@ -263,12 +262,7 @@ function MountainDraw() {
         backgroundColor="white"
         zIndex={10}
         transform="rotate(40deg) scaleX(1.5)"
-      >
-        {/* <LineChart
-                setMountainInfo={setMountainInfo}
-                setSpecificIndex={setSpecificIndex}
-              /> */}
-      </Box>
+      ></Box>
     </>
   );
 }

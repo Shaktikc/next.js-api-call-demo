@@ -23,6 +23,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false,
   updateMode: "resize",
   plugins: {
     legend: false,
@@ -94,12 +95,19 @@ export function LineChart({ setMountainInfo, setSpecificIndex }) {
     datasets: [
       {
         data: arrayData,
-        borderColor: "	#F5FF",
+        borderColor: "#F5FF",
         backgroundColor: "white",
       },
     ],
   };
   return (
-    <Line ref={chartRef} options={options} data={data} onClick={onClick} />
+    <Line
+      ref={chartRef}
+      width="200px"
+      height={"200px"}
+      options={options}
+      data={data}
+      onClick={onClick}
+    />
   );
 }
