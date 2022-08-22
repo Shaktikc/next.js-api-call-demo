@@ -271,7 +271,13 @@ const Mountain = () => {
               specificIndex={specificIndex}
             />
 
-            <Box w="80%" mt="1rem" zIndex={10}>
+            <Box
+              // w="100%"
+              mt="1rem"
+              zIndex={10}
+              display="fixed"
+              overflowX={{ sm: "scroll", xl: "visible" }}
+            >
               <LineChart
                 setMountainInfo={setMountainInfo}
                 setSpecificIndex={setSpecificIndex}

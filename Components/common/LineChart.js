@@ -22,7 +22,7 @@ ChartJS.register(
 );
 
 export const options = {
-  responsive: true,
+  responsive: false,
   maintainAspectRatio: false,
   elements: {
     point: {
@@ -141,8 +141,8 @@ export function LineChart({
   return (
     <Line
       ref={chartRef}
-      width="200px"
-      height={"200px"}
+      width="1000px"
+      // height={"500px"}
       options={options}
       data={data}
       onClick={onClick}

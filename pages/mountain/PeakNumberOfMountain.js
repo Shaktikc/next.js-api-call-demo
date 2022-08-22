@@ -57,7 +57,7 @@ export const PeakNumberOfMountain = ({
       >
         02
       </Box>
-      <Box
+      {/* <Box
         color="white"
         ml="5.9rem"
         fontSize={"xl"}
@@ -101,7 +101,7 @@ export const PeakNumberOfMountain = ({
         display={specificIndex === 4 ? "none" : "block"}
       >
         05
-      </Box>
+      </Box> */}
     </>
   );
 };
