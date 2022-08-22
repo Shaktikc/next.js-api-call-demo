@@ -20,6 +20,7 @@ import {
 import NextImage from "next/image";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { LineChart } from "../../Components/common/LineChart";
+import { PeakNumberOfMountain } from "./PeakNumberOfMountain";
 
 const mountainData = [
   {
@@ -246,27 +247,17 @@ const Mountain = () => {
         </Grid>
         <Grid templateColumns="repeat(11, 1fr)" gap={8}>
           <GridItem colStart={4} colSpan={8} pos="relative">
-            <Box
-              color="white"
-              ml="5.9rem"
-              fontSize={"xl"}
-              onClick={() => {
-                setSpecificIndex(0),
-                  setArrayData([150, 500, 200, 350, 250, 320, 200, 280, 150]);
-              }}
-              display={specificIndex === 0 ? "none" : "block"}
-              left="0.5%"
-              top="32%"
-              pos="absolute"
-            >
-              01
-            </Box>
+            <PeakNumberOfMountain
+              setSpecificIndex={setSpecificIndex}
+              setArrayData={setArrayData}
+              specificIndex={specificIndex}
+            />
             <Box
               color="white"
               ml="5.9rem"
               fontSize={"xl"}
               pos="absolute"
-              left="1.7%"
+              left="1.5%"
               top="35%"
               onClick={() => {
                 setSpecificIndex(1);
@@ -274,7 +265,7 @@ const Mountain = () => {
               }}
               display={specificIndex === 1 ? "none" : "block"}
             >
-              02
+              04
             </Box>
             <Box w="80%" mt="1rem" zIndex={10}>
               <LineChart
