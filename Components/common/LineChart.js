@@ -10,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line, getElementAtEvent } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(
   CategoryScale,
@@ -40,48 +41,27 @@ export const options = {
     tooltip: {
       enabled: false,
     },
+    pointDot: true,
+    datalabels: {
+      color: "#F5FFff",
+      anchor: "end",
+      align: "end",
+    },
+    // labels: {
+    //   usePointStyle: true,
+    //   pointStyle: "line",
+    // },
   },
-  // scales: {
-  //   y: {
-  //     display: false, // Hide Y axis labels
-  //   },
-  //   x: {
-  //     display: false, // Hide X axis labels
-  //   },
-  // },
+  scales: {
+    y: {
+      beginAtZero: true,
+      // display: false, // Hide Y axis labels
+    },
+    x: {
+      display: false, // Hide X axis labels
+    },
+  },
 };
-
-const labels = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  10,
-  11,
-  12,
-  13,
-  14,
-  15,
-  16,
-  17,
-  18,
-  19,
-  20,
-  21,
-  22,
-  23,
-  24,
-  25,
-  26,
-  27,
-  28,
-  29,
-];
 
 export function LineChart({
   setMountainInfo,
@@ -90,6 +70,9 @@ export function LineChart({
   arrayData,
 }) {
   const chartRef = useRef();
+  // chartjs.defaults.set("plugins.datalabels", {
+  //   color: "#FE777B",
+  // });
 
   const onClick = (event) => {
     console.log(getElementAtEvent(chartRef.current, event));
@@ -146,6 +129,39 @@ export function LineChart({
       options={options}
       data={data}
       onClick={onClick}
+      plugins={[ChartDataLabels]}
     />
   );
 }
+
+const labels = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+];
