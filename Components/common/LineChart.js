@@ -22,75 +22,102 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: false,
-  maintainAspectRatio: false,
-  elements: {
-    point: {
-      radius: 0,
-      hoverRadius: 0,
-      hitRadius: 0,
-    },
-  },
-  updateMode: "resize",
-  tooltips: {
-    enabled: false,
-  },
-  plugins: {
-    legend: false,
-    tooltip: {
-      enabled: false,
-    },
-    pointDot: true,
-    datalabels: {
-      color: "#F5FFff",
-      anchor: "end",
-      align: "end",
-      display: function (context) {
-        return (
-          context.dataIndex === 1 ||
-          context.dataIndex === 3 ||
-          context.dataIndex === 5 ||
-          context.dataIndex === 7 ||
-          context.dataIndex === 9 ||
-          context.dataIndex === 11 ||
-          context.dataIndex === 13 ||
-          context.dataIndex === 15 ||
-          context.dataIndex === 17 ||
-          context.dataIndex === 19 ||
-          context.dataIndex === 21 ||
-          context.dataIndex === 23 ||
-          context.dataIndex === 25 ||
-          context.dataIndex === 27
-        );
-      },
-      formatter: function (value, context) {
-        console.log("data,", context.chart.data.labels);
-        return context.chart.data.labels[context.dataIndex];
-      },
-    },
-    // labels: {
-    //   usePointStyle: true,
-    //   pointStyle: "line",
-    // },
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      // display: false, // Hide Y axis labels
-    },
-    x: {
-      display: false, // Hide X axis labels
-    },
-  },
-};
-
 export function LineChart({
   setMountainInfo,
   setSpecificIndex,
   setArrayData,
   arrayData,
 }) {
+  const options = {
+    responsive: false,
+    maintainAspectRatio: false,
+    elements: {
+      point: {
+        radius: 0,
+        hoverRadius: 0,
+        hitRadius: 0,
+      },
+    },
+    updateMode: "resize",
+    tooltips: {
+      enabled: false,
+    },
+    plugins: {
+      legend: false,
+      tooltip: {
+        enabled: false,
+      },
+      pointDot: true,
+      datalabels: {
+        color: "#F5FFff",
+        anchor: "end",
+        align: "end",
+        display: function (context) {
+          return (
+            context.dataIndex === 1 ||
+            context.dataIndex === 3 ||
+            context.dataIndex === 5 ||
+            context.dataIndex === 7 ||
+            context.dataIndex === 9 ||
+            context.dataIndex === 11 ||
+            context.dataIndex === 13 ||
+            context.dataIndex === 15 ||
+            context.dataIndex === 17 ||
+            context.dataIndex === 19 ||
+            context.dataIndex === 21 ||
+            context.dataIndex === 23 ||
+            context.dataIndex === 25 ||
+            context.dataIndex === 27
+          );
+        },
+        formatter: function (value, context) {
+          console.log("data,", context.chart.data.labels);
+          return context.chart.data.labels[context.dataIndex];
+        },
+        listeners: {
+          click: function (context, event) {
+            // Receives `click` events only for labels of the first dataset.
+            // The clicked label index is available in `context.dataIndex`.
+            if (context.dataIndex === 1) {
+              setSpecificIndex(0),
+                setArrayData([
+                  150, 500, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280,
+                  200, 280, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280,
+                  200, 280, 200, 280, 200, 280, 200, 280, 200,
+                ]);
+            }
+            if (context.dataIndex === 3) {
+              setSpecificIndex(1);
+              setArrayData([
+                150, 280, 200, 500, 200, 280, 200, 280, 200, 280, 200, 280, 200,
+                280, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280,
+                200, 280, 200, 280, 200, 280, 200,
+              ]);
+            }
+            console.log("label " + context.dataIndex + " has been clicked!");
+            console.log("mouse is at position x:", event.x, "and y:", event.y);
+
+            if (event.native.ctrlKey) {
+              console.log("control key is pressed!");
+            }
+          },
+        },
+      },
+      // labels: {
+      //   usePointStyle: true,
+      //   pointStyle: "line",
+      // },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        display: false, // Hide Y axis labels
+      },
+      x: {
+        display: false, // Hide X axis labels
+      },
+    },
+  };
   const chartRef = useRef();
   // chartjs.defaults.set("plugins.datalabels", {
   //   color: "#FE777B",
