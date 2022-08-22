@@ -266,8 +266,8 @@ const Mountain = () => {
               ml="5.9rem"
               fontSize={"xl"}
               pos="absolute"
-              left="20.5%"
-              top="33%"
+              left="1.7%"
+              top="35%"
               onClick={() => {
                 setSpecificIndex(1);
                 setArrayData([150, 350, 200, 500, 200, 320, 200, 280, 150]);
