@@ -152,7 +152,7 @@ const Mountain = () => {
 
       <Box zIndex={2} pos={"absolute"} top={"137px"}>
         <Grid
-          templateColumns="repeat(2, 1fr)"
+          templateColumns={{ xl: "repeat(2, 1fr)" }}
           justifyItems="end"
           gap="6px"
           pos="relative"
@@ -172,7 +172,7 @@ const Mountain = () => {
           >
             01
           </Box> */}
-          <GridItem colSpan={1}>
+          <GridItem colSpan={1} w={{ sm: "100%", md: "60%", xl: "50%" }}>
             {mountainData.map((data, indx) => {
               return (
                 <Box
@@ -193,8 +193,9 @@ const Mountain = () => {
                       // borderWidth={5}
                       // borderStyle="solid"
                       // objectFit={"contain"}
-                      width="400px"
-                      height={"300px"}
+                      // width="400px"
+                      // height={"300px"}
+                      // layout="responsive"
                       zIndex={9}
                     />
                   </SlideFade>
@@ -236,7 +237,13 @@ const Mountain = () => {
                         Nepal
                       </Text>
                     </HStack>
-                    <Text color="white" fontSize="xl" mt="2rem" w="70%">
+                    <Text
+                      color="white"
+                      fontSize="xl"
+                      mt="2rem"
+                      w="70%"
+                      // w={{ sm: "20%", md: "40%", xl: "70%" }}
+                    >
                       {data.DetailText}
                     </Text>
                   </SlideFade>
