@@ -72,7 +72,7 @@ const textDetailKeyframes = keyframes`
 `;
 
 const animation = `${animationKeyframes} 8s linear infinite`;
-const cloudAnimation = `${cloudKeyframes} 9s ease-in-out infinite`;
+const cloudAnimation = `${cloudKeyframes} 10s ease-in-out infinite`;
 // const textDetailAnimation = `${textDetailKeyframes} 2s linear infinite `;
 const Mountain = () => {
   const [mountainInfo, setMountainInfo] = useState({
