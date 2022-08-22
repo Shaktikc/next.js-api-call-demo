@@ -154,7 +154,7 @@ const Mountain = () => {
         <Grid
           templateColumns={{ xl: "repeat(2, 1fr)" }}
           justifyItems="end"
-          gap="6px"
+          // gap="6px"
           pos="relative"
         >
           {/* <Box
@@ -172,7 +172,11 @@ const Mountain = () => {
           >
             01
           </Box> */}
-          <GridItem colSpan={1} w={{ sm: "100%", md: "60%", xl: "50%" }}>
+          <GridItem
+            colSpan={1}
+            w={{ sm: "100%", md: "60%", xl: "50%" }}
+            padding={{ sm: "1rem", xl: "0rem" }}
+          >
             {mountainData.map((data, indx) => {
               return (
                 <Box
@@ -203,7 +207,7 @@ const Mountain = () => {
               );
             })}
           </GridItem>
-          <GridItem colSpan={1}>
+          <GridItem colSpan={1} padding={{ sm: "1.5rem", xl: "0rem" }}>
             {mountainData.map((data, indx) => {
               return (
                 <Box
