@@ -252,21 +252,7 @@ const Mountain = () => {
               setArrayData={setArrayData}
               specificIndex={specificIndex}
             />
-            <Box
-              color="white"
-              ml="5.9rem"
-              fontSize={"xl"}
-              pos="absolute"
-              left="1.5%"
-              top="35%"
-              onClick={() => {
-                setSpecificIndex(1);
-                setArrayData([150, 350, 200, 500, 200, 320, 200, 280, 150]);
-              }}
-              display={specificIndex === 1 ? "none" : "block"}
-            >
-              04
-            </Box>
+
             <Box w="80%" mt="1rem" zIndex={10}>
               <LineChart
                 setMountainInfo={setMountainInfo}
