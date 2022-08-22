@@ -27,8 +27,8 @@ export const options = {
   elements: {
     point: {
       radius: 0,
-      hoverRadius: 10,
-      hitRadius: 10,
+      hoverRadius: 0,
+      hitRadius: 0,
     },
   },
   updateMode: "resize",
@@ -41,17 +41,47 @@ export const options = {
       enabled: false,
     },
   },
-  scales: {
-    y: {
-      display: false, // Hide Y axis labels
-    },
-    x: {
-      display: false, // Hide X axis labels
-    },
-  },
+  // scales: {
+  //   y: {
+  //     display: false, // Hide Y axis labels
+  //   },
+  //   x: {
+  //     display: false, // Hide X axis labels
+  //   },
+  // },
 };
 
-const labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const labels = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+];
 
 export function LineChart({
   setMountainInfo,

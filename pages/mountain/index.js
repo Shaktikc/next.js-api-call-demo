@@ -82,7 +82,9 @@ const Mountain = () => {
   });
   const [specificIndex, setSpecificIndex] = useState(0);
   const [arrayData, setArrayData] = useState([
-    150, 500, 200, 350, 250, 320, 200, 280, 150,
+    150, 500, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280, 200,
+    280, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280, 200, 280,
+    200, 280, 200,
   ]);
   console.log("specificIndex", specificIndex);
   return (
@@ -148,7 +150,27 @@ const Mountain = () => {
       </Box>
 
       <Box zIndex={2} pos={"absolute"} top={"137px"}>
-        <Grid templateColumns="repeat(2, 1fr)" justifyItems="end" gap="6px">
+        <Grid
+          templateColumns="repeat(2, 1fr)"
+          justifyItems="end"
+          gap="6px"
+          pos="relative"
+        >
+          <Box
+            color="white"
+            // ml="5.9rem"
+            fontSize={"4xl"}
+            // onClick={() => {
+            //   setSpecificIndex(0),
+            //     setArrayData([150, 500, 200, 350, 250, 320, 200, 280, 150]);
+            // }}
+            // display={specificIndex === 0 ? "none" : "block"}
+            // left="0.5%"
+            // top="32%"
+            pos="absolute"
+          >
+            01
+          </Box>
           <GridItem colSpan={1}>
             {mountainData.map((data, indx) => {
               return (
