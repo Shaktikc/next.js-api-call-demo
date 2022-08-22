@@ -158,7 +158,7 @@ export function LineChart({
 
 const labels = [
   "1",
-  "2",
+  "1",
   "2",
   "2",
   "5",
