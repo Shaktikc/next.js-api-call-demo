@@ -89,7 +89,7 @@ const Mountain = () => {
   ]);
   console.log("specificIndex", specificIndex);
   return (
-    <Box>
+    <Grid templateColumns="repeat(1, 1fr)">
       <Box zIndex={2} w="100%" h="100vh" pos="absolute">
         <ProductImage
           src={mingmadai}
@@ -124,7 +124,7 @@ const Mountain = () => {
           borderWidth={5}
           borderStyle="solid"
           // zIndex={"2"}
-          layout="fixed"
+          // layout="fixed"
           objectFit={"contain"}
         />
       </Box>
@@ -145,7 +145,7 @@ const Mountain = () => {
           borderWidth={5}
           borderStyle="solid"
           // zIndex={"2"}
-          layout="fixed"
+          // layout="fixed"
           objectFit={"contain"}
         />
       </Box>
@@ -157,7 +157,7 @@ const Mountain = () => {
           gap="6px"
           pos="relative"
         >
-          <Box
+          {/* <Box
             color="white"
             // ml="5.9rem"
             fontSize={"4xl"}
@@ -171,7 +171,7 @@ const Mountain = () => {
             pos="absolute"
           >
             01
-          </Box>
+          </Box> */}
           <GridItem colSpan={1}>
             {mountainData.map((data, indx) => {
               return (
@@ -266,7 +266,7 @@ const Mountain = () => {
       </Box>
 
       {/* <LineChart /> */}
-    </Box>
+    </Grid>
   );
 };
 
