@@ -264,7 +264,7 @@ const Mountain = () => {
           </GridItem>
         </Grid>
         <Grid templateColumns="repeat(11, 1fr)" gap={8}>
-          <GridItem colStart={4} colSpan={8} pos="relative">
+          <GridItem colStart={{ sm: 1, xl: 4 }} colSpan={8} pos="relative">
             <PeakNumberOfMountain
               setSpecificIndex={setSpecificIndex}
               setArrayData={setArrayData}
@@ -272,11 +272,12 @@ const Mountain = () => {
             />
 
             <Box
-              // w="100%"
+              w="94vw"
               mt="1rem"
               zIndex={10}
               display="fixed"
               overflowX={{ sm: "scroll", xl: "visible" }}
+              // bgColor="green"
             >
               <LineChart
                 setMountainInfo={setMountainInfo}
