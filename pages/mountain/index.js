@@ -156,6 +156,8 @@ const Mountain = () => {
           justifyItems="end"
           // gap="6px"
           pos="relative"
+          mt={{ sm: "-5rem", xl: "0rem" }}
+          // lineHeight="1rem"
         >
           {/* <Box
             color="white"
@@ -222,7 +224,11 @@ const Mountain = () => {
                     transition={{ enter: { duration: 0.4 } }}
                   >
                     {" "}
-                    <Text color="white" fontSize="3xl">
+                    <Text
+                      color="white"
+                      fontSize="3xl"
+                      mt={{ sm: "-2rem", xl: "0rem" }}
+                    >
                       {data.title}
                     </Text>
                     <HStack>
@@ -244,8 +250,9 @@ const Mountain = () => {
                     <Text
                       color="white"
                       fontSize="xl"
-                      mt="2rem"
+                      mt={{ sm: "1rem", xl: "2rem" }}
                       w="70%"
+
                       // w={{ sm: "20%", md: "40%", xl: "70%" }}
                     >
                       {data.DetailText}
