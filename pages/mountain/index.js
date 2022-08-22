@@ -55,15 +55,15 @@ const ProductImage = chakra(NextImage, {
 });
 
 const animationKeyframes = keyframes`
-  0%   {left:200px; top:0px;}
-  50%  { left:220px; top:0px;}
-  100%  { left:200px; top:0px;}
+  0%   {left:10vw; top:0px;}
+  50%  { left:17vw; top:0px;}
+  100%  { left:10vw; top:0px;}
 `;
 
 const cloudKeyframes = keyframes`
-  0%   {left:200px; top:80px;}
-  50%  { left:220px; top:80px;}
-  100%  { left:200px; top:80px;}
+  0%   {left:10vw; top:4vw;}
+  50%  { left:17vw; top:4vw;}
+  100%  { left:10vw; top:4vw;}
 `;
 
 const textDetailKeyframes = keyframes`
