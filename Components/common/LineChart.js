@@ -46,6 +46,24 @@ export const options = {
       color: "#F5FFff",
       anchor: "end",
       align: "end",
+      display: function (context) {
+        return (
+          context.dataIndex === 1 ||
+          context.dataIndex === 3 ||
+          context.dataIndex === 5 ||
+          context.dataIndex === 7 ||
+          context.dataIndex === 9 ||
+          context.dataIndex === 11 ||
+          context.dataIndex === 13 ||
+          context.dataIndex === 15 ||
+          context.dataIndex === 17 ||
+          context.dataIndex === 19 ||
+          context.dataIndex === 21 ||
+          context.dataIndex === 23 ||
+          context.dataIndex === 25 ||
+          context.dataIndex === 27
+        );
+      },
     },
     // labels: {
     //   usePointStyle: true,
