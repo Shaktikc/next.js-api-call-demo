@@ -251,7 +251,7 @@ const Mountain = () => {
                       color="white"
                       fontSize="xl"
                       mt={{ sm: "1rem", xl: "2rem" }}
-                      w="70%"
+                      w={{ xl: "70%" }}
 
                       // w={{ sm: "20%", md: "40%", xl: "70%" }}
                     >
