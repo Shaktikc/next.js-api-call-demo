@@ -89,7 +89,7 @@ const Mountain = () => {
   ]);
   console.log("specificIndex", specificIndex);
   return (
-    <Grid templateColumns="repeat(1, 1fr)">
+    <Box>
       <Box zIndex={2} w="100%" h="100vh" pos="absolute">
         <ProductImage
           src={mingmadai}
@@ -292,7 +292,7 @@ const Mountain = () => {
       </Box>
 
       {/* <LineChart /> */}
-    </Grid>
+    </Box>
   );
 };
 
