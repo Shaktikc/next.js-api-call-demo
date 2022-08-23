@@ -55,15 +55,15 @@ const ProductImage = chakra(NextImage, {
 });
 
 const animationKeyframes = keyframes`
-  0%   {left:10vw; top:0px;}
-  50%  { left:17vw; top:0px;}
-  100%  { left:10vw; top:0px;}
+  0%   {left:2vw; top:0px;}
+  50%  { left:5vw; top:0px;}
+  100%  { left:2vw; top:0px;}
 `;
 
 const cloudKeyframes = keyframes`
-  0%   {left:10vw; top:4vw;}
-  50%  { left:17vw; top:4vw;}
-  100%  { left:10vw; top:4vw;}
+  0%   {left:2vw; top:4vw;}
+  50%  { left:5vw; top:4vw;}
+  100%  { left:2vw; top:4vw;}
 `;
 
 const textDetailKeyframes = keyframes`
@@ -107,60 +107,61 @@ const Mountain = () => {
           layout="fill"
         />
       </Box>
-      <Box
-        as={motion.div}
-        animation={animation}
-        pos="absolute"
-        // left={"15%"}
-        zIndex={10}
-        // bg="green"
-      >
-        <ProductImage
-          src={cloud}
-          width="550%"
-          // height="20%"
-          // w="200"
-          // h="200"
-          borderWidth={5}
-          borderStyle="solid"
-          // zIndex={"2"}
-          // layout="fixed"
-          objectFit={"contain"}
-        />
-      </Box>
-      <Box
-        as={motion.div}
-        animation={cloudAnimation}
-        pos="absolute"
-        left={"25%"}
-        zIndex={1}
-        // bg="red"
-      >
-        <ProductImage
-          src={cloud}
-          width="550%"
-          // height="20%"
-          // w="200"
-          // h="200"
-          borderWidth={5}
-          borderStyle="solid"
-          // zIndex={"2"}
-          // layout="fixed"
-          objectFit={"contain"}
-        />
-      </Box>
-
-      <Box zIndex={2} pos={"absolute"} top={"137px"}>
-        <Grid
-          templateColumns={{ xl: "repeat(2, 1fr)" }}
-          justifyItems="end"
-          // gap="6px"
-          pos="relative"
-          mt={{ sm: "-5rem", xl: "0rem" }}
-          gap="1rem"
-          // lineHeight="1rem"
+      <Box pos="relative" mr={{ xl: "30%" }}>
+        {" "}
+        <Box
+          as={motion.div}
+          animation={animation}
+          pos="absolute"
+          // left={"15%"}
+          zIndex={10}
+          // bg="green"
         >
-          {/* <Box
+          <ProductImage
+            src={cloud}
+            width="550%"
+            // height="20%"
+            // w="200"
+            // h="200"
+            borderWidth={5}
+            borderStyle="solid"
+            // zIndex={"2"}
+            // layout="fixed"
+            objectFit={"contain"}
+          />
+        </Box>
+        <Box
+          as={motion.div}
+          animation={cloudAnimation}
+          pos="absolute"
+          left={"25%"}
+          zIndex={1}
+          // bg="red"
+        >
+          <ProductImage
+            src={cloud}
+            width="550%"
+            // height="20%"
+            // w="200"
+            // h="200"
+            borderWidth={5}
+            borderStyle="solid"
+            // zIndex={"2"}
+            // layout="fixed"
+            objectFit={"contain"}
+          />
+        </Box>
+        <Box zIndex={2} pos={"absolute"} top={"137px"}>
+          <Grid
+            templateColumns={{ xl: "repeat(2, 1fr)" }}
+            justifyItems="end"
+            // gap="6px"
+            pos="relative"
+            mt={{ sm: "-5rem", xl: "0rem" }}
+            gap="1rem"
+            // lineHeight="1rem"
+          >
+            {/* <Box
             color="white"
             // ml="5.9rem"
             fontSize={"4xl"}
@@ -175,120 +176,121 @@ const Mountain = () => {
           >
             01
           </Box> */}
-          <GridItem
-            colSpan={1}
-            w={{ sm: "100%", md: "60%", xl: "50%" }}
-            padding={{ sm: "1rem", xl: "0.5rem" }}
-          >
-            {mountainData.map((data, indx) => {
-              return (
-                <Box
-                  key={data.title}
-                  display={specificIndex === indx ? "block" : "none"}
-                >
-                  <SlideFade
-                    direction="bottom"
-                    // in={true}
-                    in={specificIndex === indx ? true : false}
-                    // unmountOnExit={true}
-                    offsetY="50px"
-                    transition={{ enter: { duration: 0.4 } }}
-                  >
-                    {" "}
-                    <ProductImage
-                      src={data.image}
-                      // borderWidth={5}
-                      // borderStyle="solid"
-                      // objectFit={"contain"}
-                      // width="400px"
-                      // height={"300px"}
-                      // layout="responsive"
-                      zIndex={9}
-                    />
-                  </SlideFade>
-                </Box>
-              );
-            })}
-          </GridItem>
-          <GridItem colSpan={1} padding={{ sm: "1.5rem", xl: "0rem" }}>
-            {mountainData.map((data, indx) => {
-              return (
-                <Box
-                  key={data.title}
-                  display={specificIndex === indx ? "block" : "none"}
-                >
-                  <SlideFade
-                    direction="bottom"
-                    in={specificIndex === indx ? true : false}
-                    // unmountOnExit={true}
-                    offsetY="50px"
-                    transition={{ enter: { duration: 0.4 } }}
-                  >
-                    {" "}
-                    <Text
-                      color="white"
-                      fontSize="3xl"
-                      mt={{ sm: "-2rem", xl: "0rem" }}
-                    >
-                      {data.title}
-                    </Text>
-                    <HStack>
-                      <ProductImage
-                        src={pin}
-                        // width="370%"
-                        // height="20%"
-                        // w="200"
-                        // h="200"
-                        borderWidth={5}
-                        borderStyle="solid"
-                        layout="fixed"
-                        objectFit={"contain"}
-                      />
-                      <Text color="white" fontSize="md">
-                        Nepal
-                      </Text>
-                    </HStack>
-                    <Text
-                      color="white"
-                      fontSize="xl"
-                      mt={{ sm: "1rem", xl: "2rem" }}
-                      w={{ xl: "70%" }}
-
-                      // w={{ sm: "20%", md: "40%", xl: "70%" }}
-                    >
-                      {data.DetailText}
-                    </Text>
-                  </SlideFade>
-                </Box>
-              );
-            })}
-          </GridItem>
-        </Grid>
-        <Grid templateColumns="repeat(11, 1fr)" gap={8} mt="1.2rem">
-          <GridItem colStart={{ sm: 1, xl: 4 }} colSpan={8} pos="relative">
-            <PeakNumberOfMountain
-              setSpecificIndex={setSpecificIndex}
-              setArrayData={setArrayData}
-              specificIndex={specificIndex}
-            />
-
-            <Box
-              w={{ sm: "94vw", xl: "0vw" }}
-              mt="1rem"
-              zIndex={10}
-              display="fixed"
-              overflowX={{ sm: "scroll", xl: "visible" }}
-              // bgColor="green"
+            <GridItem
+              colSpan={1}
+              w={{ sm: "100%", md: "60%", xl: "70%" }}
+              padding={{ sm: "1rem", xl: "0.5rem" }}
             >
-              <LineChart
-                setMountainInfo={setMountainInfo}
+              {mountainData.map((data, indx) => {
+                return (
+                  <Box
+                    key={data.title}
+                    display={specificIndex === indx ? "block" : "none"}
+                  >
+                    <SlideFade
+                      direction="bottom"
+                      // in={true}
+                      in={specificIndex === indx ? true : false}
+                      // unmountOnExit={true}
+                      offsetY="50px"
+                      transition={{ enter: { duration: 0.4 } }}
+                    >
+                      {" "}
+                      <ProductImage
+                        src={data.image}
+                        // borderWidth={5}
+                        // borderStyle="solid"
+                        // objectFit={"contain"}
+                        // width="400px"
+                        // height={"300px"}
+                        // layout="responsive"
+                        zIndex={9}
+                      />
+                    </SlideFade>
+                  </Box>
+                );
+              })}
+            </GridItem>
+            <GridItem colSpan={1} padding={{ sm: "1.5rem", xl: "0rem" }}>
+              {mountainData.map((data, indx) => {
+                return (
+                  <Box
+                    key={data.title}
+                    display={specificIndex === indx ? "block" : "none"}
+                  >
+                    <SlideFade
+                      direction="bottom"
+                      in={specificIndex === indx ? true : false}
+                      // unmountOnExit={true}
+                      offsetY="50px"
+                      transition={{ enter: { duration: 0.4 } }}
+                    >
+                      {" "}
+                      <Text
+                        color="white"
+                        fontSize="3xl"
+                        mt={{ sm: "-2rem", xl: "0rem" }}
+                      >
+                        {data.title}
+                      </Text>
+                      <HStack>
+                        <ProductImage
+                          src={pin}
+                          // width="370%"
+                          // height="20%"
+                          // w="200"
+                          // h="200"
+                          borderWidth={5}
+                          borderStyle="solid"
+                          layout="fixed"
+                          objectFit={"contain"}
+                        />
+                        <Text color="white" fontSize="md">
+                          Nepal
+                        </Text>
+                      </HStack>
+                      <Text
+                        color="white"
+                        fontSize="xl"
+                        mt={{ sm: "1rem", xl: "2rem" }}
+                        w={{ xl: "70%" }}
+
+                        // w={{ sm: "20%", md: "40%", xl: "70%" }}
+                      >
+                        {data.DetailText}
+                      </Text>
+                    </SlideFade>
+                  </Box>
+                );
+              })}
+            </GridItem>
+          </Grid>
+          <Grid templateColumns="repeat(11, 1fr)" gap={8} mt="1.2rem">
+            <GridItem colStart={{ sm: 1, xl: 4 }} colSpan={8} pos="relative">
+              <PeakNumberOfMountain
                 setSpecificIndex={setSpecificIndex}
                 setArrayData={setArrayData}
-                arrayData={arrayData}
+                specificIndex={specificIndex}
               />
-            </Box>
-          </GridItem>
-        </Grid>
+
+              <Box
+                w={{ sm: "94vw", xl: "0vw" }}
+                mt="1rem"
+                zIndex={10}
+                display="fixed"
+                overflowX={{ sm: "scroll", xl: "visible" }}
+                // bgColor="green"
+              >
+                <LineChart
+                  setMountainInfo={setMountainInfo}
+                  setSpecificIndex={setSpecificIndex}
+                  setArrayData={setArrayData}
+                  arrayData={arrayData}
+                />
+              </Box>
+            </GridItem>
+          </Grid>
+        </Box>
       </Box>
 
       {/* <LineChart /> */}
