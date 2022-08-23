@@ -24,7 +24,7 @@ import { PeakNumberOfMountain } from "./PeakNumberOfMountain";
 
 const mountainData = [
   {
-    title: "Ketu mountian",
+    title: "K2 mountian",
     DetailText:
       "lkdsjflk lkjdflkj sadlkfj lkasdjf lkadsfjlk jlk sfkja lkjsaflk ajflkadsfj lkadfsj lkjf lkj dfk jaslkf jaslkfj ",
     image: mountain,

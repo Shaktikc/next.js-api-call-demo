@@ -136,7 +136,7 @@ export function LineChart({
       // setSpecificIndex(1);
       // setArrayData([150, 350, 200, 500, 200, 320, 200, 280, 150]);
       setMountainInfo({
-        title: "Ketu mountian",
+        title: "K2 mountian",
         DetailText:
           "lkdsjflk lkjdflkj sadlkfj lkasdjf lkadsfjlk jlk sfkja lkjsaflk ajflkadsfj lkadfsj lkjf lkj dfk jaslkf jaslkfj ",
         state: true,
