@@ -99,7 +99,7 @@ const Mountain = () => {
         />
       </Box>
       <Box
-        color="gray.300"
+        color="gray.500"
         fontWeight={"bold"}
         pos="absolute"
         // ml="5.9rem"
@@ -109,8 +109,8 @@ const Mountain = () => {
         //     setArrayData([150, 500, 200, 350, 250, 320, 200, 280, 150]);
         // }}
         // display={specificIndex === 0 ? "none" : "block"}
-        mt="2%"
-        left="32%"
+        mt={{ sm: "80%", xl: "2%" }}
+        left={{ sm: "25%", xl: "32%" }}
         zIndex={"auto"}
       >
         01
