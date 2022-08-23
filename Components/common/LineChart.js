@@ -109,13 +109,13 @@ export function LineChart({
       // },
     },
     scales: {
-      // y: {
-      //   beginAtZero: true,
-      //   display: false, // Hide Y axis labels
-      // },
-      // x: {
-      //   display: false, // Hide X axis labels
-      // },
+      y: {
+        beginAtZero: true,
+        display: false, // Hide Y axis labels
+      },
+      x: {
+        display: false, // Hide X axis labels
+      },
     },
   };
   const chartRef = useRef();

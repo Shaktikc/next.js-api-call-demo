@@ -176,6 +176,8 @@ const Mountain = () => {
             pos="relative"
             mt={{ sm: "-5rem", xl: "0rem" }}
             gap="1rem"
+            ml={{ xl: "38%" }}
+            width={{ xl: "100%" }}
             // lineHeight="1rem"
           >
             {/* <Box
@@ -291,12 +293,6 @@ const Mountain = () => {
           </Grid>
           <Grid templateColumns="repeat(11, 1fr)" gap={8} mt="1.2rem">
             <GridItem colStart={{ sm: 1, xl: 4 }} colSpan={8} pos="relative">
-              <PeakNumberOfMountain
-                setSpecificIndex={setSpecificIndex}
-                setArrayData={setArrayData}
-                specificIndex={specificIndex}
-              />
-
               <Box
                 w={{ sm: "94vw", xl: "0vw" }}
                 mt="1rem"
