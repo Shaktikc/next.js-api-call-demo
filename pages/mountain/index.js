@@ -178,7 +178,7 @@ const Mountain = () => {
           </Box> */}
             <GridItem
               colSpan={1}
-              w={{ sm: "100%", md: "60%", xl: "70%" }}
+              w={{ sm: "100%", md: "100%", xl: "70%" }}
               padding={{ sm: "1rem", xl: "0.5rem" }}
             >
               {mountainData.map((data, indx) => {
