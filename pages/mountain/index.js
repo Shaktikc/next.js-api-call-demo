@@ -273,7 +273,7 @@ const Mountain = () => {
             />
 
             <Box
-              w="94vw"
+              w={{ sm: "94vw", xl: "0vw" }}
               mt="1rem"
               zIndex={10}
               display="fixed"
