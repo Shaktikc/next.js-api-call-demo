@@ -55,15 +55,15 @@ const ProductImage = chakra(NextImage, {
 });
 
 const animationKeyframes = keyframes`
-  0%   {left:2vw; top:0px;}
-  50%  { left:5vw; top:0px;}
-  100%  { left:2vw; top:0px;}
+  0%   {left:18vw; top:0px;}
+  50%  { left:20vw; top:0px;}
+  100%  { left:18vw; top:0px;}
 `;
 
 const cloudKeyframes = keyframes`
-  0%   {left:2vw; top:4vw;}
-  50%  { left:5vw; top:4vw;}
-  100%  { left:2vw; top:4vw;}
+  0%   {left:18vw; top:4vw;}
+  50%  { left:20vw; top:4vw;}
+  100%  { left:18vw; top:4vw;}
 `;
 
 const textDetailKeyframes = keyframes`
@@ -110,7 +110,7 @@ const Mountain = () => {
         // }}
         // display={specificIndex === 0 ? "none" : "block"}
         mt={{ sm: "80%", xl: "2%" }}
-        left={{ sm: "25%", xl: "32%" }}
+        left={{ sm: "25%", xl: "49%" }}
         zIndex={"auto"}
       >
         01
@@ -176,7 +176,7 @@ const Mountain = () => {
             pos="relative"
             mt={{ sm: "-5rem", xl: "0rem" }}
             gap="1rem"
-            ml={{ xl: "38%" }}
+            ml={{ xl: "25%" }}
             width={{ xl: "100%" }}
             // lineHeight="1rem"
           >
