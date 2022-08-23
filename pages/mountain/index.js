@@ -90,7 +90,7 @@ const Mountain = () => {
   console.log("specificIndex", specificIndex);
   return (
     <Box>
-      <Box zIndex={2} w="100%" h="100vh" pos="absolute">
+      <Box zIndex={1} w="100%" h="100vh" pos="absolute">
         <ProductImage
           src={mingmadai}
           alt="nicee"
@@ -98,7 +98,24 @@ const Mountain = () => {
           layout="fill"
         />
       </Box>
-      <Box pos="absolute" top="0" zIndex={1} w="100%" h="100vh">
+      <Box
+        color="gray.300"
+        fontWeight={"bold"}
+        pos="absolute"
+        // ml="5.9rem"
+        fontSize={"9xl"}
+        // onClick={() => {
+        //   setSpecificIndex(0),
+        //     setArrayData([150, 500, 200, 350, 250, 320, 200, 280, 150]);
+        // }}
+        // display={specificIndex === 0 ? "none" : "block"}
+        mt="2%"
+        left="32%"
+        zIndex={"auto"}
+      >
+        01
+      </Box>
+      <Box pos="absolute" top="0" zIndex={-1} w="100%" h="100vh">
         {" "}
         <ProductImage
           src={Rectangle}
@@ -107,7 +124,7 @@ const Mountain = () => {
           layout="fill"
         />
       </Box>
-      <Box pos="relative" mr={{ xl: "30%" }}>
+      <Box pos="relative" mr={{ xl: "30%" }} zIndex={10}>
         {" "}
         <Box
           as={motion.div}
@@ -211,12 +228,17 @@ const Mountain = () => {
                 );
               })}
             </GridItem>
-            <GridItem colSpan={1} padding={{ sm: "1.5rem", xl: "0rem" }}>
+            <GridItem
+              colSpan={1}
+              padding={{ sm: "1.5rem", xl: "0rem" }}
+              zIndex={10}
+            >
               {mountainData.map((data, indx) => {
                 return (
                   <Box
                     key={data.title}
                     display={specificIndex === indx ? "block" : "none"}
+                    zIndex={10}
                   >
                     <SlideFade
                       direction="bottom"
@@ -224,6 +246,7 @@ const Mountain = () => {
                       // unmountOnExit={true}
                       offsetY="50px"
                       transition={{ enter: { duration: 0.4 } }}
+                      zIndex={10}
                     >
                       {" "}
                       <Text
@@ -254,6 +277,7 @@ const Mountain = () => {
                         fontSize="xl"
                         mt={{ sm: "1rem", xl: "2rem" }}
                         w={{ xl: "70%" }}
+                        zIndex={10}
 
                         // w={{ sm: "20%", md: "40%", xl: "70%" }}
                       >
